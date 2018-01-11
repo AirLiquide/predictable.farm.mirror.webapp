@@ -1,0 +1,59 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: #80AB25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16pt;
+}
+
+#ssh_items {
+    margin: auto;
+    width: 650px;
+}
+
+.ssh_item {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ssh_item_left {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F9F9F9;
+    width: 500px;
+    height: 40px;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.ssh_item_left_name {
+    justify-content: space-between;
+    padding-left: 10px;
+    font-size: 11pt;
+}
+
+.ssh_item_left_port {
+    padding-right: 10px;
+    color: #4A90E2;
+}
+
+.ssh_item_right_button {
+    height: 40px;
+    background-color: #80AB25;
+    margin: 0;
+    border-radius: 4px;
+    color:white;
+    border: none;
+    font-weight: bold;
+    font-size: 10pt;
+}
