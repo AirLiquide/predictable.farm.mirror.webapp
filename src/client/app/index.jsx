@@ -51,7 +51,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            socket: io('http://localhost:3000'),
+            socket: io('http://mirror.predictable.run:3000'),
             sshItems: {}
         };
 
