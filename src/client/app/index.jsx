@@ -13,15 +13,31 @@ class SshItem extends React.Component {
         super(props);
     }
 
+    tunnelIsOk(tunnel) {
+        if(tunnel) {
+            return "ssh_item_left_name_socket ssh_item_left_name_indicator_ok"
+        } else {
+            return "ssh_item_left_name_tunnel"
+        }
+    }
+
+    getUrlTerminal(port) {
+        return 'http://ec2-18-196-89-111.eu-central-1.compute.amazonaws.com:8080/ssh/host/18.195.139.85?port=' + port + '&color=red';
+    }
+
     render () {
         return (
             <div className="ssh_item">
                 <div className="ssh_item_left">
-                    <div className="ssh_item_left_name">{this.props.name}</div>
+                    <div className="ssh_item_left_name">
+                        {this.props.name}
+                        <div className="ssh_item_left_name_socket ssh_item_left_name_indicator_ok">socket</div>
+                        <div className={this.tunnelIsOk(this.props.tunnel)}>tunnel</div>
+                    </div>
                     <div className="ssh_item_left_port">Port : {this.props.port}</div>
                 </div>
                 <div className="ssh_item_right">
-                    <a target="_blank" href="/topt">
+                    <a target="_blank" href={this.getUrlTerminal(this.props.port)}>
                         <button className="ssh_item_right_button">open terminal</button>
                     </a>
                 </div>
@@ -58,7 +74,7 @@ class App extends React.Component {
                 <Header/>
                 <div id="ssh_items">
                     {Object.keys(this.state.sshItems).map((itemSsh, i) =>
-                        <SshItem key={i} name={this.state.sshItems[itemSsh]} port={itemSsh}/>
+                        <SshItem key={i} name={this.state.sshItems[itemSsh].name} port={itemSsh} tunnel={this.state.sshItems[itemSsh].tunnel}/>
                     )}
                 </div>
             </div>

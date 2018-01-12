@@ -37,6 +37,7 @@ body {
 }
 
 .ssh_item_left_name {
+    display: flex;
     justify-content: space-between;
     padding-left: 10px;
     font-size: 11pt;
@@ -56,4 +57,26 @@ body {
     border: none;
     font-weight: bold;
     font-size: 10pt;
+}
+
+.ssh_item_left_name_socket {
+    display: flex;
+    align-items: center;
+    color: red;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.ssh_item_left_name_tunnel {
+    display: flex;
+    align-items: center;
+    color: red;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.ssh_item_left_name_indicator_ok {
+    color:#80ab25;
 }
