@@ -22,7 +22,7 @@ class SshItem extends React.Component {
     }
 
     getUrlTerminal(port) {
-        return 'http://mirror.predictable.zone:8080/ssh/host/18.195.139.85?port=' + port + '&color=red';
+        return 'http://mirror.predictable.run:8080/ssh/host/mirror.predictable.run?port=' + port + '&color=red';
     }
 
     render () {
