@@ -11,6 +11,7 @@ class Header extends React.Component {
 class SshItem extends React.Component {
     constructor(props) {
         super(props);
+        this.reload = this.reload.bind(this);
     }
 
     tunnelIsOk(tunnel) {
@@ -25,6 +26,10 @@ class SshItem extends React.Component {
         return 'http://mirror.predictable.run:8080/ssh/host/mirror.predictable.run?port=' + port + '&color=red';
     }
 
+    reload() {
+        this.props.socket.emit("reload_tunnel", this.props.port);
+    }
+
     render () {
         return (
             <div className="ssh_item">
@@ -32,7 +37,10 @@ class SshItem extends React.Component {
                     <div className="ssh_item_left_name">
                         {this.props.name}
                         <div className="ssh_item_left_name_socket ssh_item_left_name_indicator_ok">socket</div>
-                        <div className={this.tunnelIsOk(this.props.tunnel)}>tunnel</div>
+                        {/*<div className={this.tunnelIsOk(this.props.tunnel)}>tunnel</div>*/}
+                        <a className="ssh_item_left_reload" onClick={this.reload.bind(this)}>
+                            open tunnel
+                        </a>
                     </div>
                     <div className="ssh_item_left_port">Port : {this.props.port}</div>
                 </div>
@@ -74,7 +82,7 @@ class App extends React.Component {
                 <Header/>
                 <div id="ssh_items">
                     {Object.keys(this.state.sshItems).map((itemSsh, i) =>
-                        <SshItem key={i} name={this.state.sshItems[itemSsh].name} port={itemSsh} tunnel={this.state.sshItems[itemSsh].tunnel}/>
+                        <SshItem socket={this.state.socket} key={i} name={this.state.sshItems[itemSsh].name} port={itemSsh} tunnel={this.state.sshItems[itemSsh].tunnel}/>
                     )}
                 </div>
             </div>

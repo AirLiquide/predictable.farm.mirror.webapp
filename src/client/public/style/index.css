@@ -80,3 +80,9 @@ body {
 .ssh_item_left_name_indicator_ok {
     color:#80ab25;
 }
+
+.ssh_item_left_reload {
+    margin-left: 10px;
+    color: #4A90E2;
+    cursor: pointer;
+}
