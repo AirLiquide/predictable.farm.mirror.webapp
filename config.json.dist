@@ -1,0 +1,10 @@
+{
+    "server": {
+        "host": "mirror.predictable-farm.domain",
+        "port": "3000"
+    },
+    "webssh": {
+        "host": "mirror.predictable-farm.domain",
+        "port": "8080"
+    }
+}

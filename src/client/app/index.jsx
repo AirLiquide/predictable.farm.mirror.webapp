@@ -2,6 +2,8 @@ import React from 'react';
 import {render} from 'react-dom';
 import io from 'socket.io-client';
 
+import CONFIG from '../../../config.json'
+
 class Header extends React.Component {
     render () {
         return <div id="header">Devices Predictable Farm SSH</div>;
@@ -23,7 +25,7 @@ class SshItem extends React.Component {
     }
 
     getUrlTerminal(port) {
-        return 'http://mirror.predictable.run:8080/ssh/host/mirror.predictable.run?port=' + port + '&color=red';
+        return 'http://' + CONFIG.webssh.host + ':' + CONFIG.webssh.port + '/ssh/host/' + CONFIG.server.host + '?port=' + port + '&color=red';
     }
 
     reload() {
@@ -59,7 +61,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            socket: io('http://mirror.predictable.run:3000'),
+            socket: io('http://' + CONFIG.server.host + ':' + CONFIG.server.port),
             sshItems: {}
         };
 
