@@ -1,17 +1,13 @@
 {
-  "name": "predictable-mirror-webapp",
+  "name": "predictable.farm.mirror.webapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
+  "author": "Air Liquide",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@digital-git.airliquide.com:brivael.lepogam-sc/predictable-mirror-webapp.git"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
