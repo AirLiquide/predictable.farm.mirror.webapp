@@ -7,12 +7,12 @@ This is the front end web application for the ssh mirror server. It lists the av
 
 We suppose this web app and the mirror server are on the same server.
 
-Copy `config.json.dist`  to  `config.json` and change the values for the server host and username if needed.
-
 ### Installation
 
     npm install
     npm run build # runs webpack
+
+Copy `config.json.dist`  to  `config.json` and change the values for the server host and username if needed.
 
 ### Run
 
